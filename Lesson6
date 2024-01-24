@@ -1,0 +1,38 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.3;
+
+contract Exercise1 {
+    bool public b = true;
+
+    function get_b() public view returns (bool) {
+        return b;
+    }
+}
+
+contract Exercise2 {
+    uint public x;
+
+    function addToX2(uint y) public {
+        x += y;
+    }
+}
+
+contract Exercise3 {
+    uint public x;
+
+    modifier onlyIncrease(uint y) {
+        require(y > 0, "Value must be greater than 0");
+        _;
+    }
+
+    function increaseX(uint y) public onlyIncrease(y) {
+        x += y;
+    }
+}
+
+contract Exercise4 {
+     function returnTwo() public pure returns (int result, bool flag) {
+        (result, flag) = (-2, true);
+    }
+}
